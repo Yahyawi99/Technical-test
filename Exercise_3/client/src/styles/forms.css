@@ -1,0 +1,28 @@
+.form {
+    color: var(--white);
+    background-color: red;
+}
+
+
+/* Labels */
+.form>div label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form>div label p:nth-child(2) {
+    color: var(--red);
+}
+
+/* Inputs */
+.form>div input {
+    width: 100%;
+    max-width: 250px;
+    height: 35px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1rem;
+    outline: none;
+    padding: 0 0 0 5px;
+}

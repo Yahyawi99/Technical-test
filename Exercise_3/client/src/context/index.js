@@ -1,8 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
-  return <AppContext.Provider value={""}>{children}</AppContext.Provider>;
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [description, setDescription] = useState("");
+
+  return (
+    <AppContext.Provider
+      value={{
+        firstName,
+        setFirstName,
+        lastName,
+        setLastName,
+        email,
+        setEmail,
+        description,
+        setDescription,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export const useGlobally = () => useContext(AppContext);
