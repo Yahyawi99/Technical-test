@@ -1,6 +1,9 @@
 .form {
     color: var(--white);
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
 
@@ -9,6 +12,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    margin: 0 0 5px 0;
 }
 
 .form>div label p:nth-child(2) {
@@ -16,13 +20,60 @@
 }
 
 /* Inputs */
-.form>div input {
-    width: 100%;
-    max-width: 250px;
-    height: 35px;
+.form>div input,
+.form>div textarea {
+    width: 100vw;
+    max-width: 350px;
     font-family: inherit;
     font-weight: 500;
     font-size: 1rem;
     outline: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.form>div input::placeholder,
+.form>div textarea::placeholder {
+    opacity: .5;
+}
+
+.form>div input {
+    height: 40px;
     padding: 0 0 0 5px;
+}
+
+.form>div textarea {
+    height: 150px;
+    padding: 10px 0 0 5px;
+}
+
+/* submit button */
+.form>button {
+    width: 100%;
+    height: 50px;
+    background-color: var(--btn-back-clr);
+    color: var(--white);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.form>button:hover {
+    background-color: transparent;
+    border-color: var(--btn-back-clr);
+    color: var(--btn-back-clr);
+}
+
+
+/* *********************** */
+/* *********************** */
+/* *********************** */
+/* Classes added using Javascript */
+.form>div .InputError {
+    border-color: var(--red);
 }

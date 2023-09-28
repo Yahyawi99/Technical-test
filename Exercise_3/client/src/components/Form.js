@@ -10,7 +10,7 @@ const Form = () => {
           <p>First Name</p>
           <p>*</p>
         </label>
-        <input name="firstName" type="text" />
+        <input name="firstName" type="text" placeholder="Yassin" />
       </div>
 
       <div className="lastName">
@@ -18,7 +18,7 @@ const Form = () => {
           <p>Last Name</p>
           <p>*</p>
         </label>
-        <input name="firstName" type="text" />
+        <input name="firstName" type="text" placeholder="Yahyawi" />
       </div>
 
       <div className="email">
@@ -26,7 +26,12 @@ const Form = () => {
           <p>Email</p>
           <p>*</p>
         </label>
-        <input name="email" type="email" validate={false} />
+        <input
+          name="email"
+          type="email"
+          validate={false}
+          placeholder="yassinyahyawi@gmail.com"
+        />
       </div>
 
       <div className="description">
@@ -34,8 +39,10 @@ const Form = () => {
           <p>Description</p>
           <p>*</p>
         </label>
-        <textarea name="description"></textarea>
+        <textarea name="description" placeholder="About you"></textarea>
       </div>
+
+      <button type="submit">SUBMIT</button>
     </form>
   );
 };
