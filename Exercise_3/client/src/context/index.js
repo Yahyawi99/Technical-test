@@ -1,4 +1,4 @@
-import React, { isValidElement, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
@@ -31,7 +31,7 @@ const AppProvider = ({ children }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: data,
+        body: JSON.stringify(data),
       };
 
       await fetch("/candidate", options);
