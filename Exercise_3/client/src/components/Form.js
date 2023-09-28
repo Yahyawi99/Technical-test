@@ -33,7 +33,7 @@ const Form = () => {
           <p>*</p>
         </label>
         <input
-          name="firstName"
+          id="firstName"
           type="text"
           placeholder="Yassin"
           value={firstName}
@@ -47,7 +47,7 @@ const Form = () => {
           <p>*</p>
         </label>
         <input
-          name="firstName"
+          id="firstName"
           type="text"
           placeholder="Yahyawi"
           value={lastName}
@@ -61,7 +61,7 @@ const Form = () => {
           <p>*</p>
         </label>
         <input
-          name="email"
+          id="email"
           type="email"
           placeholder="yassinyahyawi@gmail.com"
           value={email}
@@ -75,11 +75,15 @@ const Form = () => {
           <p>*</p>
         </label>
         <textarea
-          name="description"
+          id="description"
           placeholder="About you"
           value={description}
           onChange={(e) => setDescription(e.currentTarget.value)}
         ></textarea>
+      </div>
+
+      <div className="file">
+        <input id="CV" type="file" />
       </div>
 
       <button type="submit">SUBMIT</button>

@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     gap: 25px;
+    margin: 15px 0;
 }
 
 .form>div {
@@ -47,6 +48,11 @@
     padding: 0 0 0 5px;
 }
 
+.form .file {
+    border: 2px solid var(--white);
+    padding: 15px 5px 5px 5px;
+}
+
 .form>div textarea {
     height: 150px;
     resize: none;
@@ -81,7 +87,7 @@
     background-color: var(--danger);
     font-weight: 600;
     padding: 10px;
-    position: absolute;
+    position: fixed;
     top: 0;
 }
 
