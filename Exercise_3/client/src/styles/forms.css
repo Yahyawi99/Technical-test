@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    padding: 0 10px;
 }
 
 
@@ -16,7 +17,7 @@
 }
 
 .form>div label p:nth-child(2) {
-    color: var(--red);
+    color: var(--danger);
 }
 
 /* Inputs */
@@ -44,6 +45,7 @@
 
 .form>div textarea {
     height: 150px;
+    resize: none;
     padding: 10px 0 0 5px;
 }
 
@@ -69,11 +71,30 @@
     color: var(--btn-back-clr);
 }
 
+/* Messages */
+.form .errMsg {
+    color: var(--white);
+    background-color: var(--danger);
+    font-weight: 600;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+}
+
+
+.form .successMsg {
+    color: var(--white);
+    background-color: var(--success);
+    font-weight: 600;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+}
 
 /* *********************** */
 /* *********************** */
 /* *********************** */
 /* Classes added using Javascript */
 .form>div .InputError {
-    border-color: var(--red);
+    border-color: var(--danger);
 }

@@ -11,7 +11,8 @@
     /* colors */
     --back-clr: rgb(20, 3, 33);
     --white: #fff;
-    --red: rgb(255, 0, 0);
+    --danger: rgb(255, 0, 0);
+    --success: rgb(0, 159, 0);
     --btn-back-clr: rgb(184, 44, 67);
 }
 
