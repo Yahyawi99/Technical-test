@@ -1,12 +1,17 @@
 .form {
+    width: 100%;
+    max-width: 350px;
     color: var(--white);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 25px;
-    padding: 0 10px;
 }
 
+.form>div {
+    width: 100%;
+}
 
 /* Labels */
 .form>div label {
@@ -23,8 +28,7 @@
 /* Inputs */
 .form>div input,
 .form>div textarea {
-    width: 100vw;
-    max-width: 350px;
+    width: 100%;
     font-family: inherit;
     font-weight: 500;
     font-size: 1rem;
