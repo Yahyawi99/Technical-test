@@ -6,6 +6,7 @@ const AppProvider = ({ children }) => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
+  const [fileCV, setFileCv] = useState("");
   const [error, setError] = useState({ isError: false, message: "" });
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -13,7 +14,7 @@ const AppProvider = ({ children }) => {
   const sendData = async (e) => {
     e.preventDefault();
 
-    if (!firstName || !lastName || !email || !description) {
+    if (!firstName || !lastName || !email || !description || !fileCV) {
       showError("All fields are required!");
       return;
     }
@@ -74,6 +75,8 @@ const AppProvider = ({ children }) => {
         setEmail,
         description,
         setDescription,
+        fileCV,
+        setFileCv,
         sendData,
         error,
         isSuccess,
