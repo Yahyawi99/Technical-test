@@ -26,13 +26,17 @@ const AppProvider = ({ children }) => {
 
     try {
       const data = { firstName, lastName, email, description };
+      const formData = new FormData();
+
+      formData.append("data", JSON.stringify(data));
+      formData.append("file", fileCV);
 
       const options = {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: formData,
       };
 
       await fetch("/candidate", options);
@@ -43,6 +47,7 @@ const AppProvider = ({ children }) => {
 
       setIsSuccess(false);
     } catch (error) {
+      console.log(error);
       showError("Something went wrong, please try again later.");
     }
   };

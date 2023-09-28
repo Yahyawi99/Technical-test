@@ -16,7 +16,6 @@ const Form = () => {
     sendData,
     error,
     isSuccess,
-    fileCV,
     setFileCv,
   } = useGlobally();
 
@@ -93,8 +92,7 @@ const Form = () => {
           id="CV"
           type="file"
           accept=".pdf,.docx"
-          value={fileCV}
-          onChange={(e) => setFileCv(e.currentTarget.value)}
+          onChange={(e) => setFileCv(e.currentTarget.files[0])}
         />
       </div>
 

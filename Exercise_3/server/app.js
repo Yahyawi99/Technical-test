@@ -10,13 +10,17 @@ app.use(express.json());
 
 // routes
 app.post("/candidate", async (req, res) => {
-  try {
-    await writeFile("data.json", JSON.stringify(req.body));
-    return res.status(200);
-  } catch (error) {
-    console.log(error);
-    return;
-  }
+  //   console.log(req);
+  //   console.log(req.file);
+  //   try {
+  //     await writeFile("data.json", JSON.stringify(req.body));
+  //     return res.status(200);
+  //   } catch (error) {
+  //     console.log(error);
+  //     return;
+  //   }
+  console.log(req.body);
+  res.send();
 });
 
 // start
@@ -32,3 +36,15 @@ const start = () => {
 };
 
 start();
+
+// // Configure Multer for file uploads
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, 'uploads/'); // Define the directory where you want to save the files
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, file.originalname); // Use the original file name
+//   },
+// });
+
+// const upload = multer({ storage });
