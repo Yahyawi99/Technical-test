@@ -1,14 +1,22 @@
 require("dotenv").config();
+
 const express = require("express");
 const app = express();
+
+const { writeFile } = require("fs/promises");
 
 // middlewares
 app.use(express.json());
 
 // routes
-app.post("/candidate", (req, res) => {
-  console.log(req.body);
-  res.send();
+app.post("/candidate", async (req, res) => {
+  try {
+    await writeFile("data.json", JSON.stringify(req.body));
+    return res.status(200);
+  } catch (error) {
+    console.log(error);
+    return;
+  }
 });
 
 // start
