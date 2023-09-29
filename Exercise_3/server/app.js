@@ -1,26 +1,37 @@
 require("dotenv").config();
 
+const { writeFile } = require("fs/promises");
+const path = require("path");
+
 const express = require("express");
 const app = express();
 
-const { writeFile } = require("fs/promises");
+const fileUpload = require("express-fileupload");
 
 // middlewares
-app.use(express.json());
+app.use(fileUpload());
 
-// routes
+// Post route
+const dataFolderPath = path.join(__dirname, "data");
+
 app.post("/candidate", async (req, res) => {
-  //   console.log(req);
-  //   console.log(req.file);
-  //   try {
-  //     await writeFile("data.json", JSON.stringify(req.body));
-  //     return res.status(200);
-  //   } catch (error) {
-  //     console.log(error);
-  //     return;
-  //   }
-  console.log(req.body);
-  res.send();
+  const { file: CV } = req.files;
+  const { data } = req.body;
+
+  try {
+    // create CV file
+    CV.mv(path.join(dataFolderPath, CV.name));
+
+    // craete JSON file
+    await writeFile(path.join(dataFolderPath, "form.json"), data);
+
+    return res.status(200).json({ message: "" });
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(500)
+      .json({ message: "Something went wrong please try again!" });
+  }
 });
 
 // start
