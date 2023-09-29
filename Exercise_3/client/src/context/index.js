@@ -28,20 +28,11 @@ const AppProvider = ({ children }) => {
       const data = { firstName, lastName, email, description };
       const formData = new FormData();
 
-      // formData.append("firstName", fileCV);
-      // formData.append("lastName", fileCV);
-      // formData.append("email", fileCV);
-      // formData.append("description", fileCV);
-      // formData.append("cv", fileCV);
-
       formData.append("data", JSON.stringify(data));
       formData.append("file", fileCV);
 
       const options = {
         method: "POST",
-        // headers: {
-        //   "Content-Type": "application/json",
-        // },
         body: formData,
       };
 
