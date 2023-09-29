@@ -10,6 +10,7 @@ const fileUpload = require("express-fileupload");
 
 // middlewares
 app.use(fileUpload());
+app.use(express.static("../client/build"));
 
 // Post route
 const dataFolderPath = path.join(__dirname, "data");
@@ -34,7 +35,7 @@ app.post("/candidate", async (req, res) => {
 });
 
 // start
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 const start = () => {
   try {
     app.listen(port, () => {
