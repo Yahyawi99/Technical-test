@@ -25,9 +25,8 @@ app.post("/candidate", async (req, res) => {
     // craete JSON file
     await writeFile(path.join(dataFolderPath, "form.json"), data);
 
-    return res.status(200).json({ message: "" });
+    return res.status(200).json({ message: "OK" });
   } catch (error) {
-    console.log(error);
     return res
       .status(500)
       .json({ message: "Something went wrong please try again!" });
@@ -47,15 +46,3 @@ const start = () => {
 };
 
 start();
-
-// // Configure Multer for file uploads
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, 'uploads/'); // Define the directory where you want to save the files
-//   },
-//   filename: (req, file, cb) => {
-//     cb(null, file.originalname); // Use the original file name
-//   },
-// });
-
-// const upload = multer({ storage });
