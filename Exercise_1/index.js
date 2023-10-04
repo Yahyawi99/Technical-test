@@ -1,11 +1,15 @@
+const output = [];
+
 for (let i = 1; i <= 100; i++) {
   if (i % 3 === 0) {
-    console.log("Hello, ");
+    output.push("Hello,");
   } else if (i % 5 === 0) {
-    console.log("World, ");
+    output.push("World,");
   } else if (i % 7 === 0) {
-    console.log("Yoo, ");
+    output.push("Yoo,");
   } else {
-    console.log(i);
+    output.push(i + ",");
   }
 }
+
+console.log(output.join(" "));

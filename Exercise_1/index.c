@@ -8,20 +8,19 @@ void main()
     {
         if (i % 3 == 0)
         {
-            printf("Hello, \n");
+            printf("Hello, ");
         }
         else if (i % 5 == 0)
         {
-            printf("World, \n");
+            printf("World, ");
         }
         else if (i % 7 == 0)
         {
-            printf("Yoo, \n");
+            printf("Yoo, ");
         }
         else
         {
-            printf("%d", i);
-            printf("\n");
+            printf("%d, ", i);
         }
     }
 }
